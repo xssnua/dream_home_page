@@ -1,0 +1,24 @@
+{
+  "name": "dream_home_page",
+  "version": "1.0.0",
+  "description": "landing page",
+  "homepage": "https://github.com/xssnua/dream_home_page#readme",
+  "bugs": {
+    "url": "https://github.com/xssnua/dream_home_page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xssnua/dream_home_page.git"
+  },
+  "license": "ISC",
+  "author": "Sofya Chepeleva",
+  "type": "commonjs",
+  "source": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3",
+    "sass": "^1.97.1"
+  }
+}
