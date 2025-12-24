@@ -1,0 +1,77 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+
+.header {
+    width: 100%;
+    height: 130px;
+    padding: 0 15px;
+    background-color: v.$color_light;
+    color: v.$color_dark;
+
+    .nav {
+        height: 130px;
+        @include m.d-flex(start, center);
+
+        &__logo {
+            height: 100%;
+            @include m.d-flex(center, center);
+
+            &-icon {
+                width: 93px;
+                height: 29px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__links {
+            flex-grow: 1;
+
+            .list {
+                @include m.d-flex(center, center, nowrap, row, 65px, 0);
+
+                &__item {
+                    &-link {
+                        font-size: v.$font_size_h4;
+                        font-weight: 700;
+                        color: v.$color_dark;
+
+                        @extend %hover-medium-dark;
+                    }
+                }
+            }
+
+        }
+
+        &__user-controls {
+            height: 100%;
+            @include m.d-flex(center, center, nowrap, row, 30px, 0);
+
+            .search__link-icon,
+            .account__link-icon {
+                width: 24px;
+                height: 24px;
+
+                @extend %hover-icon;
+            }
+
+            .btn__link {
+                margin-left: 15px;
+                width: 120px;
+                height: 50px;
+                border: none;
+                border-radius: 8px;
+                background-color: v.$color_dark;
+                color: v.$color_white;
+                font-size: v.$font_size_h5;
+                font-weight: 500;
+
+                @extend %hover-btn;
+            }
+        }
+
+    }
+}

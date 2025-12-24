@@ -1,0 +1,23 @@
+@use 'variables' as v;
+
+%hover-medium-dark {
+    &:hover {
+        cursor: pointer;
+        color: v.$color_medium-dark;
+    }
+}
+
+%hover-btn {
+    &:hover {
+        cursor: pointer;
+        background-color: v.$color_medium-dark;
+    }
+}
+
+%hover-icon {
+    &:hover {
+        cursor: pointer;
+        fill: v.$color_medium-dark;
+        stroke: v.$color_medium-dark;
+    }
+}

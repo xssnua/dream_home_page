@@ -104,6 +104,15 @@ button {
   font: inherit;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
 html {
   /**
     Пригодится в большинстве ситуаций
@@ -208,4 +217,9 @@ svg * {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
 }
