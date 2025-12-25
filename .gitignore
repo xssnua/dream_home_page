@@ -1,3 +1,7 @@
 node_modules
 dist
 .DC_Store
+public
+build
+.vs-code
+.parcel-cache
