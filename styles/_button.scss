@@ -1,0 +1,16 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+
+.btn {
+    width: 180px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    background-color: v.$color_dark;
+    color: v.$color_white;
+    font-size: v.$font_size_h5;
+    font-weight: 500;
+
+    @extend %hover-btn;
+}
