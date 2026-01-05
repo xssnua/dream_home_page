@@ -7,7 +7,7 @@
 
     .hero {
         height: 735px;
-        margin: 0 auto;
+        margin: 0 auto 300px auto;
         padding: 170px 15px;
         @include m.d-flex(stretch, center, nowrap, column, 0, 0);
         position: relative;
@@ -16,8 +16,8 @@
             content: '';
             position: absolute;
             top: 57px;
-            right: -75px;
-            width: 72%;
+            right: 15px;
+            width: 65%;
             height: 100%;
             background: url(../assets/img/bg_hero_alpha.webp) right/contain no-repeat;
             z-index: 0;
@@ -181,14 +181,6 @@
 @media (max-width: v.$media-md) {
     .hero-section {
         .hero {
-
-            &::before {
-                top: -64px;
-                right: -38px;
-                width: 81%;
-                height: 100%
-            }
-
             &__filters {
                 &-search {
                     justify-content: center;
@@ -227,7 +219,6 @@
 
             &::before {
                 top: -32px;
-                right: -25px;
                 width: 97%;
                 height: 100%;
             }
@@ -265,7 +256,6 @@
 
             &::before {
                 top: -32px;
-                right: -25px;
                 width: 97%;
                 height: 100%;
             }
