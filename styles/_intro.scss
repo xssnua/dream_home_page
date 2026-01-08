@@ -35,7 +35,7 @@
                 font-size: v.$font_size_h4;
                 font-weight: 700;
                 line-height: 1.6;
-                color: v.$color_medium-dark;
+                color: v.$color_medium-dark2x;
                 margin: 0 0 20px 0;
             }
 
@@ -55,14 +55,14 @@
                 &-number {
                     font-size: 40px;
                     font-weight: 700;
-                    color: v.$color_medium-dark;
+                    color: v.$color_medium-dark2x;
                     line-height: 1;
                     margin-bottom: 5px;
                 }
 
                 &-label {
                     font-size: v.$font_size_h5;
-                    color: v.$color_medium-dark;
+                    color: v.$color_medium-dark2x;
                     font-weight: 500;
                     letter-spacing: 1px;
                     white-space: nowrap;
@@ -200,7 +200,6 @@
 }
 @media (max-width: 400px) {
     .intro__wrapper-content-stats {
-        flex-direction: column;
         gap: 20px;
     }
     .intro__wrapper-content-stat {

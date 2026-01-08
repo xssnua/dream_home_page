@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'sass:color';
+
+.advantages-section {
+    margin: 140px 0;
+    background: v.$color_white;
+
+    .advantages {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        @include m.d-flex(center, center, nowrap, column);
+
+        &__cards-wrapper {
+            @include m.d-flex(space-between, center, wrap, row,);
+            gap: 20px;
+        }
+
+        &__title {
+            margin: 0 0 16px 0;
+            font-size: v.$font_size_h2;
+            font-weight: 700;
+            color: v.$color_dark;
+        }
+
+        &__desc {
+            margin: 0 auto 64px auto;
+            max-width: 630px;
+            color: v.$color_medium-dark2x;
+            font-size: v.$font_size_h4;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: v.$media-xl) {
+    .advantages-section {
+        .advantages {
+             &__cards-wrapper {
+                @include m.d-flex(space-around, center, wrap, row);
+                gap: 20px;
+        }
+        }
+    }
+}
