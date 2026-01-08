@@ -1,4 +1,75 @@
 @charset "UTF-8";
+.header .nav__links .list__item-link:hover {
+  cursor: pointer;
+  color: #695346;
+}
+
+.header .nav__user-controls .btn__link:hover, .btn:hover {
+  cursor: pointer;
+  background-color: #695346;
+}
+
+.header .nav__user-controls .search__link-icon:hover,
+.header .nav__user-controls .account__link-icon:hover {
+  cursor: pointer;
+  fill: #695346;
+  stroke: #695346;
+}
+
+.img-card {
+  width: 100%;
+  max-width: 275px;
+  height: 268px;
+  padding: 30px 24px;
+  border-radius: 18px;
+  background-color: #DDC7BB;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  column-gap: 0;
+  row-gap: 12px;
+  text-align: center;
+  transition: transform 0.18s ease, background-color 0.22s ease, box-shadow 0.18s ease;
+}
+.img-card__wrapper {
+  width: 83px;
+  height: 83px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #FEF7F2;
+  transition: background-color 0.18s ease;
+}
+.img-card__wrapper-icon {
+  width: 52px;
+  height: 52px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+}
+.img-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2B1B12;
+}
+.img-card__desc {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4F3527;
+  text-align: left;
+  line-height: 1.35;
+}
+.img-card:hover {
+  cursor: pointer;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+}
+
 /**
   Нормализация блочной модели
  */
@@ -202,23 +273,6 @@ button {
 .container {
   max-width: 1230px;
   margin: 0 auto;
-}
-
-.header .nav__links .list__item-link:hover {
-  cursor: pointer;
-  color: #695346;
-}
-
-.header .nav__user-controls .btn__link:hover, .btn:hover {
-  cursor: pointer;
-  background-color: #695346;
-}
-
-.header .nav__user-controls .search__link-icon:hover,
-.header .nav__user-controls .account__link-icon:hover {
-  cursor: pointer;
-  fill: #695346;
-  stroke: #695346;
 }
 
 .btn {
@@ -691,7 +745,7 @@ button {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.6;
-  color: #695346;
+  color: #4F3527;
   margin: 0 0 20px 0;
 }
 .intro__wrapper-content-stats {
@@ -721,13 +775,13 @@ button {
 .intro__wrapper-content-stat-number {
   font-size: 40px;
   font-weight: 700;
-  color: #695346;
+  color: #4F3527;
   line-height: 1;
   margin-bottom: 5px;
 }
 .intro__wrapper-content-stat-label {
   font-size: 16px;
-  color: #695346;
+  color: #4F3527;
   font-weight: 500;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -869,7 +923,6 @@ button {
 }
 @media (max-width: 400px) {
   .intro__wrapper-content-stats {
-    flex-direction: column;
     gap: 20px;
   }
   .intro__wrapper-content-stat {
@@ -881,6 +934,58 @@ button {
   }
   .intro__wrapper-content-stat-label {
     font-size: 13.6px;
+  }
+}
+.advantages-section {
+  margin: 140px 0;
+  background: #FFF;
+}
+.advantages-section .advantages {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  column-gap: 0;
+  row-gap: 0;
+}
+.advantages-section .advantages__cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 0;
+  row-gap: 0;
+  gap: 20px;
+}
+.advantages-section .advantages__title {
+  margin: 0 0 16px 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #2B1B12;
+}
+.advantages-section .advantages__desc {
+  margin: 0 auto 64px auto;
+  max-width: 630px;
+  color: #4F3527;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .advantages-section .advantages__cards-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 0;
+    row-gap: 0;
+    gap: 20px;
   }
 }
 
