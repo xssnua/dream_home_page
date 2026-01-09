@@ -1,0 +1,25 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+
+.portfolio-section {
+    margin: 144px auto;
+    padding: 0 15px;
+    background-color: v.$color_white;
+
+    .portfolio {
+        text-align: center;
+
+        &__title {
+            margin: 0 0 64px 0;
+            font-size: v.$font_size_h2;
+            font-weight: 700;
+            color: v.$color_dark
+        }
+
+        &__wrapper {
+            @include m.d-flex(center, center, wrap, row);
+            gap: 60px;
+        }
+    }
+}
