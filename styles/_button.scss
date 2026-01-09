@@ -11,6 +11,7 @@
     color: v.$color_white;
     font-size: v.$font_size_h5;
     font-weight: 500;
+    transition: background-color 0.22s;
 
     @extend %hover-btn;
 }
