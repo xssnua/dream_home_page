@@ -1,0 +1,61 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.reviews-section {
+    width: 100%;
+    background-color: v.$color_light;
+    padding: 60px 15px;
+
+    .reviews {
+        text-align: center;
+        &__title {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            font-size: v.$font_size_h2;
+            color: v.$color_dark;
+            margin-bottom: 50px;
+        }
+
+        &__wrapper {
+            @include m.d-flex(center, stretch, wrap, row);
+            gap: 40px;
+            padding: 20px 0;
+        }
+    }
+}
+
+@media (max-width: v.$media-xl) {
+    .reviews-section {
+        .reviews {
+            &__wrapper {
+                gap: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width:v.$media-lg) {
+    .reviews-section {
+        .reviews {
+            &__wrapper {
+                gap: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: v.$media-md) {
+    .reviews-section {
+        padding: 40px 15px;
+        .reviews {
+            &__title {
+                margin-bottom: 30px;
+            }
+            
+            &__wrapper {
+                gap: 25px;
+            }
+        }
+    }
+}
