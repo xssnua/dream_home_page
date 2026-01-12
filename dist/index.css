@@ -1275,6 +1275,49 @@ button {
   gap: 40px;
   padding: 20px 0;
 }
+.reviews-section .reviews__controls {
+  margin: 45px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  column-gap: 0;
+  row-gap: 0;
+  gap: 20px;
+}
+.reviews-section .reviews__controls--prev {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2B1B12;
+}
+.reviews-section .reviews__controls--next {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2B1B12;
+}
+.reviews-section .reviews__controls-icon {
+  width: 16px;
+  height: 22px;
+  fill: #FFF;
+}
+.reviews-section .reviews__controls-icon--prev {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  transform: rotate(180deg);
+}
+.reviews-section .reviews__controls-icon--next {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
 
 @media (max-width: 1200px) {
   .reviews-section .reviews__wrapper {
