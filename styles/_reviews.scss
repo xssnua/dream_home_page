@@ -1,5 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
+@use 'placeholders';
 
 .reviews-section {
     width: 100%;
@@ -34,6 +35,9 @@
                 border: none;
                 border-radius: 50%;
                 background-color: v.$color_dark;
+                transition: background-color .22s ease;
+
+                @extend %hover-btn;
             }
 
             &--next {
@@ -43,6 +47,9 @@
                 border: none;
                 border-radius: 50%;
                 background-color: v.$color_dark;
+                transition: background-color .22s ease;
+
+                @extend %hover-btn;
             }
 
             &-icon {

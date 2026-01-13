@@ -4,7 +4,7 @@
   color: #695346;
 }
 
-.header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover {
+.reviews-section .reviews__controls--prev:hover, .reviews-section .reviews__controls--next:hover, .header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover {
   cursor: pointer;
   background-color: #695346;
 }
@@ -1293,6 +1293,7 @@ button {
   border: none;
   border-radius: 50%;
   background-color: #2B1B12;
+  transition: background-color 0.22s ease;
 }
 .reviews-section .reviews__controls--next {
   position: relative;
@@ -1301,6 +1302,7 @@ button {
   border: none;
   border-radius: 50%;
   background-color: #2B1B12;
+  transition: background-color 0.22s ease;
 }
 .reviews-section .reviews__controls-icon {
   width: 16px;
