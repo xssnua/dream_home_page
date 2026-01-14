@@ -1,0 +1,125 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.footer {
+  width: 100%;
+  background-color: v.$color_medium-light;
+  padding: 80px 15px 200px 15px;
+
+  &__container {
+    max-width: 1230px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  &__branding {
+    width: 100%;
+    max-width: 220px;
+
+    &-icon {
+      width: 93px;
+      height: 43px;
+      margin: 0 0 32px 0;
+    }
+
+    &-desc {
+      font-size: v.$font_size_h4;
+      font-weight: 700;
+      line-height: 1.3;
+      color: v.$color_medium-dark2x;
+    }
+  }
+
+  &__nav {
+    display: contents;
+
+    &-section {
+      @include m.d-flex(start, start, wrap, column);
+      gap: 0.5rem;
+    }
+
+    &-title {
+      margin: 0 0 34px 0;
+      font-size: v.$font_size_h3;
+      font-weight: 700;
+      color: v.$color_dark;
+    }
+
+    &-list {
+      @include m.d-flex(start, start, wrap, column);
+      gap: 32px;
+    }
+
+    &-link {
+      font-size: v.$font_size_h4;
+      font-weight: 700;
+      color: v.$color_medium-dark2x;
+      transition: color 0.22s ease;
+
+      &:hover {
+        color: v.$color_medium-dark;
+      }
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.--instagram-icon,
+.--facebook-icon,
+.--twitter-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: v.$media-md) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 80px;
+  }
+
+  .footer__branding {
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+
+  .footer__nav-section {
+    align-items: center;
+  }
+
+  .footer__nav-list {
+    align-items: center;
+  }
+}
+
+@media (max-width: v.$media-sm) {
+  .footer {
+    padding: 60px 10px 120px 10px;
+  }
+
+  .footer__nav-title {
+    margin-bottom: 20px;
+    font-size: v.$font_size_h4;
+  }
+
+  .footer__nav-link {
+    font-size: v.$font_size_h5;
+  }
+}
+
+@media (max-width: v.$media-min) {
+  .footer {
+    padding: 40px 10px 80px 10px;
+  }
+
+  .footer__branding-desc {
+    font-size: v.$font_size_h5;
+  }
+}
