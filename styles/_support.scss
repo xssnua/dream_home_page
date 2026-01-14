@@ -1,0 +1,151 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+
+.support-section {
+    width: 100%;
+    max-width: 1230px;
+    margin: 144px auto;
+    padding: 0 15px;
+    background-color: v.$color_white;
+
+    .support {
+        width: 100%;
+        margin: 0 auto;
+        @include m.d-flex(start, center, nowrap, column, 0, 34px);
+
+        &__title {
+            width: 100%;
+            max-width: 660px;
+            font-size: v.$font_size_h2;
+            font-weight: 700;
+            line-height: 1.3;
+            color: v.$color_dark;
+            text-align: center;
+        }
+
+        &__options {
+            width: 100%;
+            max-width: 585px;
+            @include m.d-flex(space-between, center, wrap, row);
+        }
+
+        &__option {
+            @include m.d-flex(center, center, wrap, row);
+            gap: 8px;
+
+            &-link {
+                font-size: v.$font_size_h4;
+                font-weight: 700;
+                color: v.$color_medium-dark2x;
+            }
+        }
+
+        &__form {
+            width: 100%;
+            max-width: 680px;
+            @include m.d-flex(center, center, wrap, row);
+            gap: 20px;
+
+            &-group {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: url("../assets/icons/email-icon.svg");
+                    width: 24px;
+                    height: 24px;
+                    top: 50%;
+                    left: 25px;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            &-input {
+                width: 505px;
+                height: 58px;
+                padding: 18px 0 18px 56px;
+                border: none;
+                border-radius: 8px;
+                background-color: v.$color_medium-light;
+                color: v.$color_medium-dark2x;
+                font-size: v.$font_size_h4;
+                font-weight: 600;
+
+                &::placeholder {
+                    color: v.$color_medium-dark2x;
+                    font-size: v.$font_size_h4;
+                    font-weight: 600;
+                }
+            }
+
+            &-btn {
+                width: 155px;
+                height: 58px;
+                border: none;
+                border-radius: 8px;
+                background-color: v.$color_dark;
+                color: v.$color_white;
+                font-size: v.$font_size_h4;
+                font-weight: 500;
+                transition: background-color .22s ease;
+
+                @extend %hover-btn;
+            }
+        }
+    }
+}
+
+@media (max-width: v.$media-sm) {
+    .support-section {
+        .support {
+            &__options {
+                @include m.d-flex(center, center, wrap, row);
+            }
+
+            &__form {
+                @include m.d-flex(center, center, wrap, column);
+                gap: 20px;
+
+                &-group {
+                    &::before {
+                        left: 10px;
+                    }
+                }
+
+                &-input {
+                    width: 370px;
+                    height: 65px;
+                    padding: 18px 0 18px 40px;
+
+                    &::placeholder {
+                        font-size: v.$font_size_h5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: v.$media-min) {
+    .support-section {
+        .support {
+            &__form {
+                &-group {
+                    &::before {
+                        left: 10px;
+                    }
+                }
+
+                &-input {
+                    width: 300px;
+                    padding: 18px 0 18px 40px;
+
+                    &::placeholder {
+                        font-size: v.$font_size_h5;
+                    }
+                }
+            }
+        }
+    }
+}
