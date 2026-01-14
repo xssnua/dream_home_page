@@ -1491,5 +1491,120 @@ button {
     font-size: 16px;
   }
 }
+.footer {
+  width: 100%;
+  background-color: #DDC7BB;
+  padding: 80px 15px 200px 15px;
+}
+.footer__container {
+  max-width: 1230px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 2rem;
+}
+.footer__branding {
+  width: 100%;
+  max-width: 220px;
+}
+.footer__branding-icon {
+  width: 93px;
+  height: 43px;
+  margin: 0 0 32px 0;
+}
+.footer__branding-desc {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #4F3527;
+}
+.footer__nav {
+  display: contents;
+}
+.footer__nav-section {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  column-gap: 0;
+  row-gap: 0;
+  gap: 0.5rem;
+}
+.footer__nav-title {
+  margin: 0 0 34px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2B1B12;
+}
+.footer__nav-list {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  column-gap: 0;
+  row-gap: 0;
+  gap: 32px;
+}
+.footer__nav-link {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4F3527;
+  transition: color 0.22s ease;
+}
+.footer__nav-link:hover {
+  color: #695346;
+}
+.footer__nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.--instagram-icon,
+.--facebook-icon,
+.--twitter-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 80px;
+  }
+  .footer__branding {
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+  .footer__nav-section {
+    align-items: center;
+  }
+  .footer__nav-list {
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  .footer {
+    padding: 60px 10px 120px 10px;
+  }
+  .footer__nav-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .footer__nav-link {
+    font-size: 16px;
+  }
+}
+@media (max-width: 428px) {
+  .footer {
+    padding: 40px 10px 80px 10px;
+  }
+  .footer__branding-desc {
+    font-size: 16px;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */
