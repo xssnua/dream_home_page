@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xssnua.github.io/dream_home_page/sitemap.xml
