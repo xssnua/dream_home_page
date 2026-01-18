@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="dist/index.css">
+    <script type="module" src="scripts/burgerMenu.js" defer></script>
     <title>Find Your Dream Home</title>
 </head>
 <body>
@@ -52,8 +55,60 @@
                     </a>
                     <button class="btn__link">Sign up</button>
                 </div>
+
+                <button class="nav__burger burger burger--absolute" aria-label="Open menu" aria-expanded="false"
+                    id="burger-button">
+                    <div class="burger__inner">
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                    </div>
+                </button>
             </nav>
+
+            <div class="nav__overlay"></div>
         </div>
     </header>
+
+    <div class="burger-menu" id="burger-menu" aria-hidden="true">
+        <div class="burger-menu__overlay"></div>
+        <div class="burger-menu__content">
+            <div class="burger-menu__header">
+                <button class="burger-menu__close" id="burger-close" aria-label="Close menu">
+                    <svg class="burger-menu__close-icon">
+                        <use href="assets/sprites.svg#cross-icon"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="burger-menu__nav" aria-label="Mobile navigation">
+                <ul class="burger-menu__list">
+                    <li class="burger-menu__item">
+                        <a href="#home" class="burger-menu__link" data-burger-close>Home</a>
+                    </li>
+                    <li class="burger-menu__item">
+                        <a href="#service" class="burger-menu__link" data-burger-close>Service</a>
+                    </li>
+                    <li class="burger-menu__item">
+                        <a href="#agents" class="burger-menu__link" data-burger-close>Agents</a>
+                    </li>
+                    <li class="burger-menu__item">
+                        <a href="#contacts" class="burger-menu__link" data-burger-close>Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="burger-menu__controls">
+                <a href="#" class="burger-menu__account" data-burger-close>
+                    <svg class="burger-menu__account-icon">
+                        <use href="assets/sprites.svg#account-icon"></use>
+                    </svg>
+                    <span>My Account</span>
+                </a>
+                <button class="burger-menu__btn" data-burger-close>Sign up</button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
