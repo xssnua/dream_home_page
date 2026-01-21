@@ -95,6 +95,7 @@
             }
         }
     }
+    
     @media (max-width: v.$media-md) {
         .nav {
             @include m.d-flex(center, center, nowrap, row, 60px, 0);

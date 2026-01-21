@@ -1,0 +1,271 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.burger {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:focus-visible {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    &__inner {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    &__line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: v.$color_dark;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+
+        &:nth-child(1) {
+            top: 6px;
+        }
+        
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        &:nth-child(3) {
+            bottom: 6px;
+        }
+    }
+
+    &--absolute {
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        transform: translateY(-50%);
+    }
+}
+
+.nav__burger {
+    display: none;
+    
+    @media (max-width: v.$media-md) {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .burger {
+        &--absolute {
+            right: 16px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .burger {
+        &--absolute {
+            right: 12px;
+        }
+    }
+}
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    &--open {
+        visibility: visible;
+        opacity: 1;
+        
+        .burger-menu__content {
+            transform: translateX(0);
+        }
+        
+        .burger-menu__overlay {
+            opacity: 1;
+        }
+    }
+    
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    &__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 320px;
+        height: 100%;
+        background-color: v.$color_light;
+        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        padding: 32px 0;
+        
+        @media (max-width: 576px) {
+            width: 280px;
+        }
+        
+        @media (max-width: 375px) {
+            width: 100%;
+        }
+    }
+    
+    &__header {
+        padding: 10px 40px 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    &__close {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        @include m.d-flex(center, center);
+        transition: background-color 0.2s ease;
+        font-size: 24px;
+        color: v.$color_dark;
+
+        &-icon {
+          width: 25px;
+          height: 25px;
+          fill: v.$color_dark;
+          stroke: v.$color_dark;
+        }
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+    
+    &__nav {
+        flex: 1;
+        padding: 32px 24px;
+        overflow-y: auto;
+    }
+    
+    &__list {
+        @include m.d-flex(start, start, nowrap, column, 24px, 0);
+    }
+    
+    &__item {
+        width: 100%;
+    }
+    
+    &__link {
+        display: block;
+        width: 100%;
+        padding: 12px 8px;
+        font-size: v.$font_size_h4;
+        font-weight: 600;
+        color: v.$color_dark;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+    
+    &__controls {
+        padding: 24px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        @include m.d-flex(center, center, nowrap, column, 24px, 0);
+    }
+    
+    &__account {
+        width: 100%;
+        @include m.d-flex(center, center, nowrap, row, 12px, 0);
+        padding: 12px;
+        text-decoration: none;
+        color: v.$color_dark;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+    
+    &__account-icon {
+        width: 24px;
+        height: 24px;
+        fill: v.$color_dark;
+    }
+    
+    &__btn {
+        width: 100%;
+        padding: 12px 24px;
+        background-color: v.$color_dark;
+        color: v.$color_white;
+        border: none;
+        border-radius: 8px;
+        font-size: v.$font_size_h5;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            background-color: #333;
+        }
+    }
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (max-width: v.$media-md) {
+    .burger-menu--open ~ .header .nav__user-controls {
+        display: none;
+    }
+}
