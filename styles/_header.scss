@@ -98,53 +98,10 @@
     
     @media (max-width: v.$media-md) {
         .nav {
-            @include m.d-flex(center, center, nowrap, row, 60px, 0);
-            position: relative;
-
-            &__logo {
-                position: absolute;
-                left: 0;
-                height: 100%;
-                @include m.d-flex(start, center);
-            }
-
             &__user-controls {
-                @include m.d-flex(center, center, nowrap, row, min(15px, 5vw), 0);
+                display: none;
             }
         }
     }
 
-    @media (max-width: v.$media-sm) {
-        
-        .nav {
-            &__user-controls {
-                    .btn__link {
-                        margin-left: 0;
-                        width: 110px;
-                        height: 35px;
-                        font-size: v.$font_size_h5;
-                    }
-            }
-        }
-    }
-
-    @media (max-width: v.$media-min) {
-        .nav {
-            @include m.d-flex(center, center, nowrap, row, 15px, 0);
-            position: relative;
-
-            &__logo {
-                position: absolute;
-                left: calc((100% / 2) - 13vw);
-                bottom: 5px;
-                height: 100%;
-                @include m.d-flex(center, start);
-
-                &-icon {
-                    width: 93px;
-                    height: 43px;
-                }
-            }
-        }
-    }
 }
