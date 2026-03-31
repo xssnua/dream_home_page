@@ -8,8 +8,10 @@
     padding: 0 15px;
     background-color: v.$color_light;
     color: v.$color_dark;
-    position: fixed;
+    position: sticky;
+    top: 0;
     border-bottom: 1px solid v.$color_dark;
+    z-index: 100;
 
     .nav {
         height: 130px;
