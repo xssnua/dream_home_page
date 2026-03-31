@@ -324,7 +324,7 @@ body.menu-open {
   cursor: pointer;
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+  background-color: #f4ebe6;
 }
 
 .card-portfolio {
@@ -423,7 +423,7 @@ body.menu-open {
   cursor: pointer;
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+  background-color: #f4ebe6;
 }
 
 .card-portfolio__header-location,
@@ -781,6 +781,10 @@ button {
   padding: 0 15px;
   background-color: #FEF7F2;
   color: #2B1B12;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #2B1B12;
+  z-index: 100;
 }
 .header .nav {
   height: 130px;
