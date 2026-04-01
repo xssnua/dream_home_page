@@ -445,19 +445,38 @@
                         </div>
                     </div>
 
-                    <form class="support__form" action="#" method="post">
-                        <div class="support__form-group">
-                            <label for="email">
-                                <!-- <img src="assets/icons/email-icon.svg" alt="Email icon" class="support__form-icon"> -->
-                            </label>
-                            <input class="support__form-input" type="email" id="email" name="email" placeholder="Enter your email address..." required>
+                    <form class="support__form" id="contactForm" action="#" method="post" novalidate>
+                        <div class="support__form-group --form-name">
+                            <input type="text" id="name" name="name" class="support__form-input"
+                                placeholder="Enter your name..." required>
                         </div>
-                        <button class="support__form-btn" type="submit">Submit</button>
+
+                        <div class="support__form-group --form-email">
+                            <input type="email" id="email" name="email" class="support__form-input"
+                                placeholder="Enter your email..." required>
+                        </div>
+
+                        <div class="support__form-group --form-phone">
+                            <input type="tel" id="phone" name="phone" class="support__form-input"
+                                placeholder="Enter your phone..." required>
+                        </div>
+
+                        <div class="support__form-group --form-message">
+                            <textarea id="message" name="message" class="support__form-input"
+                                placeholder="Enter message..." required></textarea>
+                        </div>
+
+                        <button id="submitBtn" class="support__form-btn" type="submit" disabled>Submit</button>
                     </form>
+
+                    <div id="formSuccess" class="form-success" aria-live="polite">The form has been successfully submitted!</div>
+
                 </div>
             </div>
         </section>
     </main>
+
+    <script type="module" src="./scripts/app.js"></script>
 </body>
 
 </html>

@@ -1402,7 +1402,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   column-gap: 0;
   row-gap: 0;
   gap: 20px;
@@ -1410,14 +1410,53 @@ button {
 .support-section .support__form-group {
   position: relative;
 }
-.support-section .support__form-group::before {
+.support-section .support__form .--form-email::before {
   position: absolute;
-  content: url("../assets/icons/email-icon.svg");
+  content: "";
   width: 24px;
   height: 24px;
   top: 50%;
   left: 25px;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
+  background-image: url("../assets/icons/email-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.support-section .support__form .--form-phone::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  background-image: url("../assets/icons/phone-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.support-section .support__form .--form-name::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  background-image: url("../assets/icons/name-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.support-section .support__form .--form-message::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  top: 25%;
+  left: 25px;
+  transform: translateY(-50%);
+  background-image: url("../assets/icons/message-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .support-section .support__form-input {
   width: 505px;
@@ -1435,6 +1474,13 @@ button {
   font-size: 18px;
   font-weight: 600;
 }
+.support-section .support__form-input.error {
+  border: 2px solid red;
+}
+.support-section .support__form textarea.support__form-input {
+  resize: none;
+  min-height: 120px;
+}
 .support-section .support__form-btn {
   width: 155px;
   height: 58px;
@@ -1445,6 +1491,12 @@ button {
   font-size: 18px;
   font-weight: 500;
   transition: background-color 0.22s ease;
+}
+.support-section .support__form-btn:disabled {
+  background-color: #DDC7BB;
+  color: #695346;
+  cursor: not-allowed;
+  opacity: 0.4;
 }
 
 @media (max-width: 576px) {
@@ -1490,6 +1542,32 @@ button {
   .support-section .support__form-input::placeholder {
     font-size: 16px;
   }
+}
+.form-success {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2B1B12;
+  color: #FFF;
+  padding: 15px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.form-success.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: red;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */

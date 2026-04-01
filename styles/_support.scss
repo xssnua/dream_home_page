@@ -44,21 +44,73 @@
         &__form {
             width: 100%;
             max-width: 680px;
-            @include m.d-flex(center, center, wrap, row);
+            @include m.d-flex(center, center, wrap, column);
             gap: 20px;
 
             &-group {
                 position: relative;
 
-                &::before {
+                // &::before {
+                //     position: absolute;
+                //     content: url("../assets/icons/email-icon.svg");
+                //     width: 24px;
+                //     height: 24px;
+                //     top: 50%;
+                //     left: 25px;
+                //     transform: translate(0, -50%);
+                // }
+            }
+
+            .--form-email::before {
                     position: absolute;
-                    content: url("../assets/icons/email-icon.svg");
+                    content: "";
                     width: 24px;
                     height: 24px;
                     top: 50%;
                     left: 25px;
-                    transform: translate(0, -50%);
-                }
+                    transform: translateY(-50%);
+                    background-image: url("../assets/icons/email-icon.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+            }
+
+           .--form-phone::before {
+                    position: absolute;
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    top: 50%;
+                    left: 25px;
+                    transform: translateY(-50%);
+                    background-image: url("../assets/icons/phone-icon.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+            }
+
+           .--form-name::before {
+                    position: absolute;
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    top: 50%;
+                    left: 25px;
+                    transform: translateY(-50%);
+                    background-image: url("../assets/icons/name-icon.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+            }
+
+           .--form-message::before {
+                    position: absolute;
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    top: 25%;
+                    left: 25px;
+                    transform: translateY(-50%);
+                    background-image: url("../assets/icons/message-icon.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
             }
 
             &-input {
@@ -78,6 +130,15 @@
                     font-weight: 600;
                 }
             }
+            
+            &-input.error {
+                border: 2px solid red;
+            }
+            
+            textarea.support__form-input {
+                resize: none;
+                min-height: 120px;
+            }
 
             &-btn {
                 width: 155px;
@@ -92,6 +153,14 @@
 
                 @extend %hover-btn;
             }
+
+           &-btn:disabled {
+                background-color: v.$color_medium-light;
+                color: v.$color_medium-dark;
+                cursor: not-allowed;
+                opacity: 0.4;
+            }
+
         }
     }
 }
@@ -148,4 +217,35 @@
             }
         }
     }
+}
+
+.form-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: v.$color_dark;
+    color: v.$color_white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+}
+
+.error-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: red;
+    font-size: 14px;
 }
