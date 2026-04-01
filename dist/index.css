@@ -1,4 +1,44 @@
 @charset "UTF-8";
+.header .nav__links .list__item-link:hover {
+  cursor: pointer;
+  color: #695346;
+}
+
+.support-section .support__form-btn:hover, .reviews-section .reviews__controls--prev:hover, .reviews-section .reviews__controls--next:hover, .header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover, #toTopBtn:hover {
+  cursor: pointer;
+  background-color: #695346;
+}
+
+.header .nav__user-controls .search__link-icon:hover,
+.header .nav__user-controls .account__link-icon:hover {
+  cursor: pointer;
+  fill: #695346;
+  stroke: #695346;
+}
+
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2B1B12;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: background-color 0.22s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#toTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#toTopBtn img {
+  width: 35px;
+}
+
 .burger {
   position: relative;
   width: 48px;
@@ -50,7 +90,7 @@
 }
 .burger--absolute {
   position: absolute;
-  top: 5.5%;
+  top: 25.5%;
   right: 24px;
 }
 
@@ -256,23 +296,6 @@ body.menu-open {
     display: none;
   }
 }
-.header .nav__links .list__item-link:hover {
-  cursor: pointer;
-  color: #695346;
-}
-
-.support-section .support__form-btn:hover, .reviews-section .reviews__controls--prev:hover, .reviews-section .reviews__controls--next:hover, .header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover {
-  cursor: pointer;
-  background-color: #695346;
-}
-
-.header .nav__user-controls .search__link-icon:hover,
-.header .nav__user-controls .account__link-icon:hover {
-  cursor: pointer;
-  fill: #695346;
-  stroke: #695346;
-}
-
 .img-card {
   width: 100%;
   max-width: 275px;

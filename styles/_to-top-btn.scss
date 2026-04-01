@@ -1,0 +1,30 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+
+#toTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: v.$color_dark;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 
+        background-color 0.22s ease, 
+        opacity 0.3s ease, 
+        visibility 0.3s ease;
+    @extend %hover-btn;
+}
+
+#toTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#toTopBtn img {
+    width: 35px;
+}
