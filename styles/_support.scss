@@ -176,10 +176,11 @@
                 @include m.d-flex(center, center, wrap, column);
                 gap: 20px;
 
-                &-group {
-                    &::before {
-                        left: 10px;
-                    }
+                .--form-email::before,
+                .--form-name::before,
+                .--form-message::before,
+                .--form-phone::before {
+                    left: 10px;
                 }
 
                 &-input {
@@ -200,10 +201,11 @@
     .support-section {
         .support {
             &__form {
-                &-group {
-                    &::before {
-                        left: 10px;
-                    }
+                .--form-email::before,
+                .--form-name::before,
+                .--form-message::before,
+                .--form-phone::before {
+                    left: 10px;
                 }
 
                 &-input {
@@ -234,6 +236,7 @@
         opacity 0.3s ease,
         visibility 0.3s ease,
         transform 0.3s ease;
+    z-index: 1000;
 
         &.show {
             opacity: 1;

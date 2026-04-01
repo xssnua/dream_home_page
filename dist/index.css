@@ -1519,7 +1519,10 @@ button {
     row-gap: 0;
     gap: 20px;
   }
-  .support-section .support__form-group::before {
+  .support-section .support__form .--form-email::before,
+  .support-section .support__form .--form-name::before,
+  .support-section .support__form .--form-message::before,
+  .support-section .support__form .--form-phone::before {
     left: 10px;
   }
   .support-section .support__form-input {
@@ -1532,7 +1535,10 @@ button {
   }
 }
 @media (max-width: 428px) {
-  .support-section .support__form-group::before {
+  .support-section .support__form .--form-email::before,
+  .support-section .support__form .--form-name::before,
+  .support-section .support__form .--form-message::before,
+  .support-section .support__form .--form-phone::before {
     left: 10px;
   }
   .support-section .support__form-input {
@@ -1555,6 +1561,7 @@ button {
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 .form-success.show {
   opacity: 1;
