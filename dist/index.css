@@ -1624,7 +1624,7 @@ button {
   flex-direction: column;
   column-gap: 0;
   row-gap: 0;
-  gap: 20px;
+  gap: 40px;
 }
 .support-section .support__form-group {
   position: relative;
@@ -1736,7 +1736,7 @@ button {
     flex-direction: column;
     column-gap: 0;
     row-gap: 0;
-    gap: 20px;
+    gap: 50px;
   }
   .support-section .support__form .--form-email::before,
   .support-section .support__form .--form-name::before,
@@ -1751,6 +1751,9 @@ button {
   }
   .support-section .support__form-input::placeholder {
     font-size: 16px;
+  }
+  .support-section .support .error-message {
+    bottom: auto;
   }
 }
 @media (max-width: 428px) {
