@@ -1,3 +1,5 @@
+import { showLoader, hideLoader } from "./loader.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("formSuccess");
@@ -76,19 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         if (validateForm()) {
-            const formData = {
-                name: form.name.value.trim(),
-                email: form.email.value.trim(),
-                phone: form.phone.value.trim(),
-                message: form.message.value.trim()
-            };
 
-            localStorage.setItem("contactFormData", JSON.stringify(formData));
+            showLoader();
 
-            successMsg.classList.add("show");
-            setTimeout(() => successMsg.classList.remove("show"), 3000);
-            form.reset();
-            submitBtn.disabled = true;
+            setTimeout(() => {
+                const formData = {
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    phone: form.phone.value.trim(),
+                    message: form.message.value.trim()
+                };
+
+                localStorage.setItem("contactFormData", JSON.stringify(formData));
+
+                hideLoader();
+
+                successMsg.classList.add("show");
+                setTimeout(() => successMsg.classList.remove("show"), 3000);
+
+                form.reset();
+                submitBtn.disabled = true;
+
+            }, 1500);
         }
     });
 
