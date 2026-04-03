@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dream Home helps you find your ideal property. Over 8K+ listings and 2K+ agents."> <meta name="keywords" content="real estate, buy house, rent apartment, property listings, Dream Home"> <meta name="author" content="Dream Home Team">
+    <meta name="description" content="Dream Home helps you find your ideal property. Over 8K+ listings and 2K+ agents.">
+    <meta name="keywords" content="real estate, buy house, rent apartment, property listings, Dream Home">
+    <meta name="author" content="Dream Home Team">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -59,7 +61,7 @@
                             <use href="assets/sprites.svg#account-icon"></use>
                         </svg>
                     </a>
-                    <button class="btn__link">Sign up</button>
+                    <button class="btn__link nav-signup">Sign up</button>
                 </div>
 
                 <button class="nav__burger burger burger--absolute" aria-label="Open menu" aria-expanded="false"
@@ -84,7 +86,7 @@
                         </svg>
                     </button>
                 </div>
-        
+
                 <nav class="burger-menu__nav" aria-label="Mobile navigation">
                     <ul class="burger-menu__list">
                         <li class="burger-menu__item">
@@ -101,7 +103,7 @@
                         </li>
                     </ul>
                 </nav>
-        
+
                 <div class="burger-menu__controls">
                     <a href="#" class="burger-menu__account" data-burger-close>
                         <svg class="burger-menu__account-icon">
@@ -526,7 +528,8 @@
                         <button id="submitBtn" class="support__form-btn" type="submit" disabled>Submit</button>
                     </form>
 
-                    <div id="formSuccess" class="form-success" aria-live="polite">The form has been successfully submitted!</div>
+                    <div id="formSuccess" class="form-success" aria-live="polite">The form has been successfully
+                        submitted!</div>
 
                 </div>
             </div>
@@ -639,6 +642,21 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="signupModal">
+        <div class="modal__content">
+            <button class="modal__close" id="modalCloseBtn">×</button>
+
+            <h2 class="modal__title">Sign Up</h2>
+            <p class="modal__text">Leave your contact details and we will get in touch with you.</p>
+
+            <form class="modal__form">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit" class="modal__submit">Send</button>
+            </form>
+        </div>
+    </div>
 
     <button id="toTopBtn" aria-label="Arrow up">
         <img src="./assets/img/arrow-up.png" alt="">
