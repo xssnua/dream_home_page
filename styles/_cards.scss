@@ -49,10 +49,12 @@
   }
 
   &:hover {
-    cursor: pointer;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: color.scale(v.$color_dark, $lightness: 92%);
+    @media (hover: hover) and (pointer: fine) {
+      cursor: pointer;
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      background-color: color.scale(v.$color_dark, $lightness: 92%);
+    }
   }
 
 }
@@ -133,10 +135,12 @@
   }
 
   &:hover {
-    cursor: pointer;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: color.scale(v.$color_dark, $lightness: 92%);
+    @media (hover: hover) and (pointer: fine) {
+      cursor: pointer;
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      background-color: color.scale(v.$color_dark, $lightness: 92%);
+    }
   }
 }
 
