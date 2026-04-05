@@ -59,7 +59,9 @@
       transition: color 0.22s ease;
 
       &:hover {
-        color: v.$color_medium-dark;
+        @media (hover: hover) and (pointer: fine) {
+          color: v.$color_medium-dark;
+        }
       }
     }
 
