@@ -29,21 +29,27 @@
     transform: rotate(360deg);
   }
 }
-.header .nav__links .list__item-link:hover {
-  cursor: pointer;
-  color: #695346;
+@media (hover: hover) and (pointer: fine) {
+  .header .nav__links .list__item-link:hover {
+    cursor: pointer;
+    color: #695346;
+  }
 }
 
-.support-section .support__form-btn:hover, .reviews-section .reviews__controls--prev:hover, .reviews-section .reviews__controls--next:hover, .header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover, #toTopBtn:hover {
-  cursor: pointer;
-  background-color: #695346;
+@media (hover: hover) and (pointer: fine) {
+  .support-section .support__form-btn:hover, .reviews-section .reviews__controls--prev:hover, .reviews-section .reviews__controls--next:hover, .header .nav__user-controls .btn__link:hover, .btn:hover, .card-portfolio__transaction-btn:hover, #toTopBtn:hover {
+    cursor: pointer;
+    background-color: #695346;
+  }
 }
 
-.header .nav__user-controls .search__link-icon:hover,
-.header .nav__user-controls .account__link-icon:hover {
-  cursor: pointer;
-  fill: #695346;
-  stroke: #695346;
+@media (hover: hover) and (pointer: fine) {
+  .header .nav__user-controls .search__link-icon:hover,
+  .header .nav__user-controls .account__link-icon:hover {
+    cursor: pointer;
+    fill: #695346;
+    stroke: #695346;
+  }
 }
 
 .modal {
@@ -946,8 +952,10 @@ button {
   width: 93px;
   height: 43px;
 }
-.header .nav__logo:hover {
-  cursor: pointer;
+@media (hover: hover) and (pointer: fine) {
+  .header .nav__logo:hover {
+    cursor: pointer;
+  }
 }
 .header .nav__links {
   flex-grow: 1;
