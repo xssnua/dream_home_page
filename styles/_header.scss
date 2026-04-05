@@ -27,7 +27,9 @@
             }
 
             &:hover {
-                cursor: pointer;
+                @media (hover: hover) and (pointer: fine) {
+                    cursor: pointer;
+                }
             }
         }
 

@@ -21,9 +21,11 @@
     }
     
     &:hover {
-        background-color: rgba(0, 0, 0, 0.05);
+        @media (hover: hover) and (pointer: fine) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
     }
-    
+
     &:active {
         transform: scale(0.95);
     }
@@ -173,11 +175,13 @@
           fill: v.$color_dark;
           stroke: v.$color_dark;
         }
-        
+
         &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            @media (hover: hover) and (pointer: fine) {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
         }
-        
+
         &:focus {
             outline: none;
             box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
@@ -208,9 +212,11 @@
         text-decoration: none;
         border-radius: 8px;
         transition: all 0.2s ease;
-        
+
         &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            @media (hover: hover) and (pointer: fine) {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
         }
     }
     
@@ -228,9 +234,11 @@
         color: v.$color_dark;
         border-radius: 8px;
         transition: background-color 0.2s ease;
-        
+
         &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            @media (hover: hover) and (pointer: fine) {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
         }
     }
     
@@ -251,9 +259,11 @@
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
-        
+
         &:hover {
-            background-color: #333;
+            @media (hover: hover) and (pointer: fine) {
+                background-color: #333;
+            }
         }
     }
 }
