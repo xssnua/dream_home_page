@@ -175,8 +175,10 @@
 .burger:focus-visible {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
-.burger:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+@media (hover: hover) and (pointer: fine) {
+  .burger:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .burger:active {
   transform: scale(0.95);
@@ -318,8 +320,10 @@
   fill: #2B1B12;
   stroke: #2B1B12;
 }
-.burger-menu__close:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+@media (hover: hover) and (pointer: fine) {
+  .burger-menu__close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .burger-menu__close:focus {
   outline: none;
@@ -353,8 +357,10 @@
   border-radius: 8px;
   transition: all 0.2s ease;
 }
-.burger-menu__link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+@media (hover: hover) and (pointer: fine) {
+  .burger-menu__link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .burger-menu__controls {
   padding: 24px;
@@ -382,8 +388,10 @@
   border-radius: 8px;
   transition: background-color 0.2s ease;
 }
-.burger-menu__account:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+@media (hover: hover) and (pointer: fine) {
+  .burger-menu__account:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .burger-menu__account-icon {
   width: 24px;
@@ -402,8 +410,10 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.burger-menu__btn:hover {
-  background-color: #333;
+@media (hover: hover) and (pointer: fine) {
+  .burger-menu__btn:hover {
+    background-color: #333;
+  }
 }
 
 body.menu-open {
@@ -462,11 +472,13 @@ body.menu-open {
   text-align: left;
   line-height: 1.35;
 }
-.img-card:hover {
-  cursor: pointer;
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+@media (hover: hover) and (pointer: fine) {
+  .img-card:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+  }
 }
 
 .card-portfolio {
@@ -561,11 +573,13 @@ body.menu-open {
   font-weight: 700;
   color: #4F3527;
 }
-.card-portfolio:hover {
-  cursor: pointer;
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+@media (hover: hover) and (pointer: fine) {
+  .card-portfolio:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+  }
 }
 
 .card-portfolio__header-location,
@@ -585,12 +599,14 @@ body.menu-open {
   overflow: hidden;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, outline 0.22s ease;
 }
-.card-reviews:hover {
-  cursor: pointer;
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  outline: 1px solid #695346;
-  background-color: #FEF7F2;
+@media (hover: hover) and (pointer: fine) {
+  .card-reviews:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    outline: 1px solid #695346;
+    background-color: #FEF7F2;
+  }
 }
 .card-reviews__img {
   width: 100%;
@@ -1982,8 +1998,10 @@ button {
   color: #4F3527;
   transition: color 0.22s ease;
 }
-.footer__nav-link:hover {
-  color: #695346;
+@media (hover: hover) and (pointer: fine) {
+  .footer__nav-link:hover {
+    color: #695346;
+  }
 }
 .footer__nav-icon {
   width: 20px;
