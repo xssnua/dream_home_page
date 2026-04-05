@@ -1,21 +1,26 @@
-const headerSignUpBtn = document.querySelector('.nav-signup'); // твоя кнопка в хедере
+const signUpButtons = document.querySelectorAll('.nav-signup, .btn, .card-portfolio__transaction-btn, .hero__filters-search-btn');
 const modal = document.getElementById('signupModal');
 const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-// открыть модалку
-headerSignUpBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  modal.classList.add('open');
+signUpButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('open');
+  });
 });
 
-// закрыть по кнопке
 modalCloseBtn.addEventListener('click', () => {
   modal.classList.remove('open');
 });
 
-// закрыть по клику вне окна
 modal.addEventListener('click', (e) => {
   if (e.target === modal) {
+    modal.classList.remove('open');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) {
     modal.classList.remove('open');
   }
 });
