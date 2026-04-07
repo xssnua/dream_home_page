@@ -5,6 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const successMsg = document.getElementById("formSuccess");
     const submitBtn = document.querySelector(".support__form-btn");
 
+    const inputs = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message
+    };
+
+    const touched = {
+        name: false,
+        email: false,
+        phone: false,
+        message: false
+    };
+
     function showError(input, message) {
         input.classList.add("error");
         let errorMsg = input.nextElementSibling;
@@ -38,8 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = form.name.value.trim();
         if (!/^([A-Za-zА-Яа-яё_-]+)$/.test(name) &&
             !/^([A-Za-zА-Яа-яё_]+(\s[A-Za-zА-Яа-яё_]+){1,2})$/.test(name)) {
+
             valid = false;
-            showError(form.name, "Enter a name (1 word) or full name (2-3 words)");
+            if (touched.name) showError(form.name, "Enter a name (1 word) or full name (2-3 words)");
         } else {
             clearError(form.name);
         }
@@ -47,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = form.email.value.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             valid = false;
-            showError(form.email, "Enter a valid email address (with @ and a period)");
+            if (touched.email) showError(form.email, "Enter a valid email address (with @ and a period)");
         } else {
             clearError(form.email);
         }
@@ -55,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = form.phone.value.trim();
         if (!/^\+?\d{10,15}$/.test(phone)) {
             valid = false;
-            showError(form.phone, "Enter your phone number in the format +375XXXXXXXXX");
+            if (touched.phone) showError(form.phone, "Enter your phone number in the format +375XXXXXXXXX");
         } else {
             clearError(form.phone);
         }
@@ -63,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = form.message.value.trim();
         if (message.length < 5) {
             valid = false;
-            showError(form.message, "The message must be at least 5 characters long");
+            if (touched.message) showError(form.message, "The message must be at least 5 characters long");
         } else {
             clearError(form.message);
         }
@@ -72,10 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return valid;
     }
 
-    form.addEventListener("input", validateForm);
+    Object.keys(inputs).forEach((key) => {
+        inputs[key].addEventListener("input", () => {
+            touched[key] = true;
+            validateForm();
+        });
+    });
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+
+        Object.keys(touched).forEach(k => touched[k] = true);
 
         if (validateForm()) {
 
@@ -99,9 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.reset();
                 submitBtn.disabled = true;
 
+                Object.keys(touched).forEach(k => touched[k] = false);
+
             }, 1500);
         }
     });
-
-    validateForm();
 });
