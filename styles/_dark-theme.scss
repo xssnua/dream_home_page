@@ -1,0 +1,435 @@
+[data-theme="dark"] {
+  body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+  }
+
+  .header {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--border-color) !important;
+
+    .nav__logo-icon {
+      fill: var(--logo-fill) !important;
+    }
+
+    .nav__links .list__item-link {
+      color: var(--text-primary) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--link-hover) !important;
+        }
+      }
+    }
+
+    .nav__user-controls .search__link-icon,
+    .nav__user-controls .account__link-icon {
+      fill: var(--icon-fill) !important;
+      stroke: var(--icon-stroke) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          fill: var(--accent) !important;
+          stroke: var(--accent) !important;
+        }
+      }
+    }
+
+    .nav__user-controls .btn__link {
+      background-color: var(--btn-bg) !important;
+      color: var(--btn-text) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--btn-hover) !important;
+        }
+      }
+    }
+  }
+
+  .hero-section {
+    background-color: var(--bg-secondary) !important;
+
+    .hero__content-title {
+      color: var(--text-primary) !important;
+    }
+
+    .hero__content-description {
+      color: var(--text-primary) !important;
+    }
+
+    .hero__filters {
+      background-color: var(--bg-tertiary) !important;
+
+      input,
+      select {
+        background-color: var(--input-bg) !important;
+        color: var(--text-primary) !important;
+
+        &::placeholder {
+          color: var(--text-muted) !important;
+        }
+      }
+
+      .filters-group__link-icon {
+        fill: var(--text-muted) !important;
+      }
+    }
+
+    .hero::after {
+      background: linear-gradient(90deg,
+          #1E1E1E 0%,
+          rgba(30, 30, 30, 0.95) 15%,
+          rgba(30, 30, 30, 0.85) 30%,
+          rgba(30, 30, 30, 0.7) 50%,
+          rgba(30, 30, 30, 0.4) 70%,
+          rgba(30, 30, 30, 0.2) 85%,
+          rgba(30, 30, 30, 0) 100%) !important;
+    }
+  }
+
+  .intro {
+    background-color: var(--bg-primary) !important;
+
+    .intro__wrapper-content-title {
+      color: var(--text-primary) !important;
+    }
+
+    .intro__wrapper-content-description {
+      color: var(--text-secondary) !important;
+    }
+
+    .intro__wrapper-content-stat-number {
+      color: var(--text-secondary) !important;
+    }
+
+    .intro__wrapper-content-stat-label {
+      color: var(--text-secondary) !important;
+    }
+  }
+
+  .advantages-section {
+    background: var(--bg-primary) !important;
+
+    .advantages__title {
+      color: var(--text-primary) !important;
+    }
+
+    .advantages__desc {
+      color: var(--text-secondary) !important;
+    }
+  }
+
+  .portfolio-section {
+    background-color: var(--bg-primary) !important;
+
+    .portfolio__title {
+      color: var(--text-primary) !important;
+    }
+  }
+
+  .reviews-section {
+    background-color: var(--bg-secondary) !important;
+
+    .reviews__title {
+      color: var(--text-primary) !important;
+    }
+
+    .reviews__controls--prev,
+    .reviews__controls--next {
+      background-color: var(--btn-bg) !important;
+    }
+
+    .reviews__controls-icon {
+      fill: var(--btn-text) !important;
+    }
+  }
+
+  .support-section {
+    background-color: var(--bg-primary) !important;
+
+    .support__title {
+      color: var(--text-primary) !important;
+    }
+
+    .support__option-link {
+      color: var(--text-secondary) !important;
+    }
+
+    .support__form-input {
+      background-color: var(--bg-tertiary) !important;
+      color: var(--text-primary) !important;
+
+      &::placeholder {
+        color: var(--text-muted) !important;
+      }
+    }
+
+    .support__form-btn {
+      background-color: var(--btn-bg) !important;
+      color: var(--btn-text) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--btn-hover) !important;
+        }
+      }
+
+      &:disabled {
+        background-color: var(--disabled-bg) !important;
+        color: var(--disabled-text) !important;
+      }
+    }
+  }
+
+  .footer {
+    background-color: var(--bg-tertiary) !important;
+
+    .footer__branding-icon {
+      fill: var(--logo-fill) !important;
+    }
+
+    .footer__branding-desc {
+      color: var(--text-secondary) !important;
+    }
+
+    .footer__nav-title {
+      color: var(--text-primary) !important;
+    }
+
+    .footer__nav-link {
+      color: var(--text-secondary) !important;
+
+      &:hover {
+        color: var(--link-hover) !important;
+      }
+    }
+
+    .footer__nav-icon {
+      fill: var(--text-secondary) !important;
+    }
+  }
+
+  .img-card {
+    background-color: var(--card-bg) !important;
+
+    // .img-card__wrapper {
+    //   background-color: var(--bg-secondary) !important;
+    // }
+
+    .img-card__title {
+      color: var(--text-primary) !important;
+    }
+
+    .img-card__desc {
+      color: var(--text-secondary) !important;
+    }
+
+    &:hover {
+      background-color: var(--card-bg-hover) !important;
+    }
+  }
+
+  .card-portfolio {
+    background-color: var(--card-bg) !important;
+
+    .card-portfolio__header-title {
+      color: var(--text-primary) !important;
+    }
+
+    .card-portfolio__details-item-icon {
+      background-color: var(--bg-primary) !important;
+    }
+
+    .card-portfolio__details-item-desc {
+      color: var(--text-secondary) !important;
+    }
+
+    .card-portfolio__transaction-btn {
+      background-color: var(--btn-bg) !important;
+      color: var(--btn-text) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--btn-hover) !important;
+        }
+      }
+    }
+
+    .card-portfolio__transaction-price {
+      color: var(--text-primary) !important;
+    }
+
+    &:hover {
+      background-color: var(--card-bg-hover) !important;
+    }
+  }
+
+  .card-reviews {
+    background-color: var(--card-bg) !important;
+
+    .card-reviews__user-title {
+      color: var(--text-primary) !important;
+    }
+
+    .card-reviews__user-subtitle {
+      color: var(--text-secondary) !important;
+    }
+
+    .card-reviews__estimation {
+      background-color: var(--estimation-bg) !important;
+
+      .card-reviews__estimation-icon {
+        fill: var(--star-fill) !important;
+      }
+
+      .card-reviews__estimation-score {
+        color: var(--text-primary) !important;
+      }
+    }
+
+    .card-reviews__info-content {
+      color: var(--text-secondary) !important;
+    }
+
+    &:hover {
+      background-color: var(--card-bg-hover) !important;
+    }
+  }
+
+  .modal {
+    background-color: var(--overlay-bg) !important;
+
+    .modal__content {
+      background-color: var(--bg-secondary) !important;
+      color: var(--text-primary) !important;
+    }
+
+    .modal__title {
+      color: var(--text-primary) !important;
+    }
+
+    .modal__text {
+      color: var(--text-secondary) !important;
+    }
+
+    .modal__form input {
+      background-color: var(--bg-tertiary) !important;
+      color: var(--text-primary) !important;
+      border-color: var(--border-color) !important;
+    }
+
+    .modal__submit {
+      background-color: var(--btn-bg) !important;
+      color: var(--btn-text) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--btn-hover) !important;
+        }
+      }
+    }
+
+    .modal__close {
+      color: var(--text-primary) !important;
+    }
+  }
+
+  .form-success {
+    background: var(--success-bg) !important;
+    color: var(--success-text) !important;
+  }
+
+  .error-message {
+    color: var(--error-color) !important;
+  }
+
+  .hero__action-btn,
+  .hero__filters-search-btn {
+    background-color: #F0EBE6 !important;
+    color: #121212 !important;
+
+    &:hover {
+      background-color: #DDC7BB !important;
+    }
+  }
+
+  .burger-menu {
+    background-color: var(--bg-secondary) !important;
+
+    .burger-menu__content {
+      background-color: var(--bg-secondary) !important;
+    }
+
+    .burger-menu__link {
+      color: var(--text-primary) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--link-hover) !important;
+        }
+      }
+    }
+
+    .burger-menu__account {
+      color: var(--text-primary) !important;
+
+      svg {
+        fill: var(--icon-fill) !important;
+      }
+    }
+
+    .burger-menu__btn {
+      background-color: var(--btn-bg) !important;
+      color: var(--btn-text) !important;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--btn-hover) !important;
+        }
+      }
+    }
+
+    .burger-menu__close {
+      color: var(--text-primary) !important;
+    }
+
+    .burger-menu__close-icon {
+      fill: var(--icon-fill) !important;
+      stroke: var(--icon-stroke) !important;
+    }
+
+    .burger-menu__close:hover {
+      @media (hover: hover) and (pointer: fine) {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+      }
+    }
+  }
+
+  .burger__line {
+    background-color: var(--text-primary) !important;
+  }
+
+  .burger:hover {
+    @media (hover: hover) and (pointer: fine) {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+  }
+
+  #toTopBtn {
+    background-color: var(--btn-bg) !important;
+
+    &:hover {
+      background-color: var(--btn-hover) !important;
+    }
+  }
+
+  .loader {
+    background: var(--overlay-bg) !important;
+  }
+}

@@ -1,0 +1,154 @@
+@use 'variables' as v;
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 56px;
+  height: 30px;
+  padding: 0;
+  margin: 0 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: var(--link-hover);
+      box-shadow: 0 0 0 3px rgba(105, 83, 70, 0.12);
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(105, 83, 70, 0.25);
+  }
+
+  /* Ползунок */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--text-muted) 0%, var(--text-secondary) 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateX(0);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Иконка солнца */
+  &__sun {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    fill: #F59E0B;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &__moon {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    fill: #94A3B8;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &[aria-checked="true"] {
+    border-color: #6B7280;
+    background: linear-gradient(135deg, #374151 0%, #1F2937 100%);
+
+    &::before {
+      transform: translateX(26px);
+      background: linear-gradient(135deg, #C4B8AC 0%, #DDC7BB 100%);
+      box-shadow: 0 2px 6px rgba(221, 199, 187, 0.3);
+    }
+
+    .theme-toggle__sun {
+      opacity: 0.5;
+    }
+
+    .theme-toggle__moon {
+      opacity: 1;
+      fill: #E5E7EB;
+    }
+  }
+
+  @media (max-width: v.$media-md) {
+    width: 50px;
+    height: 28px;
+    margin: 0 10px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+
+    &[aria-checked="true"]::before {
+      transform: translateX(22px);
+    }
+
+    &__sun,
+    &__moon {
+      width: 12px;
+      height: 12px;
+    }
+
+    &__sun {
+      left: 5px;
+    }
+
+    &__moon {
+      right: 5px;
+    }
+  }
+
+  @media (max-width: v.$media-sm) {
+    width: 46px;
+    height: 26px;
+    margin: 0 8px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &[aria-checked="true"]::before {
+      transform: translateX(20px);
+    }
+
+    &__sun,
+    &__moon {
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+.burger-menu__theme-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 10px;
+
+  .theme-toggle--mobile {
+    margin: 0;
+  }
+}

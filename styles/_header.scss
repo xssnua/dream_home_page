@@ -74,7 +74,7 @@
             .account__link-icon {
                 width: 24px;
                 height: 24px;
-                transition: fill 0.22s, stroke 0.22s;
+                transition: fill 0.22s, stroke 0.22s, width 0.3s ease, height 0.3s ease;
 
                 @extend %hover-icon;
             }
@@ -89,19 +89,21 @@
                 color: v.$color_white;
                 font-size: v.$font_size_h5;
                 font-weight: 500;
-                transition: background-color 0.22s;
+                transition: background-color 0.22s, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
 
                 @extend %hover-btn;
             }
 
         }
+
+        /* ===== Tablet: 992px ===== */
         @media (max-width: v.$media-md) {
             &__links {
                 display: none;
             }
         }
     }
-    
+
     @media (max-width: v.$media-md) {
         .nav {
             &__user-controls {
