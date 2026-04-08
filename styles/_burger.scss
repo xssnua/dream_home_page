@@ -63,8 +63,9 @@
 
     &--absolute {
         position: absolute;
-        top: 25.5%;
+        top: 50%;
         right: 24px;
+        transform: translateY(-50%);
     }
 }
 

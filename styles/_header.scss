@@ -4,7 +4,7 @@
 
 .header {
     width: 100%;
-    height: 130px;
+    height: 110px;
     padding: 0 15px;
     background-color: v.$color_light;
     color: v.$color_dark;
@@ -14,16 +14,19 @@
     z-index: 100;
 
     .nav {
-        height: 130px;
+        height: 110px;
         @include m.d-flex(start, center);
 
         &__logo {
             height: 100%;
             @include m.d-flex(center, center);
+            overflow: visible;
 
             &-icon {
                 width: 93px;
-                height: 43px;
+                height: 36px;
+                display: block;
+                flex-shrink: 0;
             }
 
             &:hover {
@@ -37,11 +40,11 @@
             flex-grow: 1;
 
             .list {
-                @include m.d-flex(center, center, nowrap, row, min(65px, 5vw), 0);
+                @include m.d-flex(center, center, nowrap, row, min(50px, 4vw), 0);
 
                 &__item {
                     &-link {
-                        font-size: v.$font_size_h4;
+                        font-size: 16px;
                         font-weight: 700;
                         color: v.$color_dark;
                         transition: color 0.22s;
@@ -53,11 +56,11 @@
 
             @media (max-width: v.$media-lg) {
                 .list {
-                    @include m.d-flex(center, center, nowrap, row, min(40px, 5vw), 0);
+                    @include m.d-flex(center, center, nowrap, row, min(30px, 4vw), 0);
 
                     &__item{
                         &-link {
-                            font-size: v.$font_size_h5;
+                            font-size: 15px;
                         }
                     }
                 }
@@ -68,35 +71,64 @@
 
         &__user-controls {
             height: 100%;
-            @include m.d-flex(center, center, nowrap, row, min(30px, 5vw), 0);
+            @include m.d-flex(center, center, nowrap, row, min(24px, 4vw), 0);
+            overflow: visible;
 
             .search__link-icon,
             .account__link-icon {
-                width: 24px;
-                height: 24px;
-                transition: fill 0.22s, stroke 0.22s, width 0.3s ease, height 0.3s ease;
+                width: 22px;
+                height: 22px;
+                transition: fill 0.22s, stroke 0.22s;
+                display: inline-block;
+                flex-shrink: 0;
 
                 @extend %hover-icon;
             }
 
             .btn__link {
-                margin-left: 15px;
-                width: 120px;
-                height: 50px;
+                margin-left: 12px;
+                width: 105px;
+                height: 44px;
                 border: none;
                 border-radius: 8px;
                 background-color: v.$color_dark;
                 color: v.$color_white;
-                font-size: v.$font_size_h5;
+                font-size: 15px;
                 font-weight: 500;
-                transition: background-color 0.22s, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+                transition: background-color 0.22s;
 
                 @extend %hover-btn;
             }
 
         }
 
-        /* ===== Tablet: 992px ===== */
+        @media (max-width: v.$media-lg) {
+            &__user-controls {
+                gap: min(16px, 3vw);
+
+                .search__link-icon,
+                .account__link-icon {
+                    transform: scale(0.83);
+                    transform-origin: center center;
+
+                    @media (hover: hover) and (pointer: fine) {
+                        &:hover {
+                            cursor: pointer;
+                            fill: v.$color_medium-dark;
+                            stroke: v.$color_medium-dark;
+                        }
+                    }
+                }
+
+                .btn__link {
+                    width: 100px;
+                    height: 42px;
+                    font-size: 14px;
+                    margin-left: 8px;
+                }
+            }
+        }
+
         @media (max-width: v.$media-md) {
             &__links {
                 display: none;

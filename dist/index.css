@@ -278,8 +278,9 @@
 }
 .burger--absolute {
   position: absolute;
-  top: 25.5%;
+  top: 50%;
   right: 24px;
+  transform: translateY(-50%);
 }
 
 .nav__burger {
@@ -544,7 +545,7 @@ body.menu-open {
     cursor: pointer;
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: #f4ebe6;
+    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
   }
 }
 
@@ -645,7 +646,7 @@ body.menu-open {
     cursor: pointer;
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: #f4ebe6;
+    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
   }
 }
 
@@ -1002,7 +1003,7 @@ button {
 
 .header {
   width: 100%;
-  height: 130px;
+  height: 110px;
   padding: 0 15px;
   background-color: #FEF7F2;
   color: #2B1B12;
@@ -1012,7 +1013,7 @@ button {
   z-index: 100;
 }
 .header .nav {
-  height: 130px;
+  height: 110px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -1020,7 +1021,6 @@ button {
   flex-direction: row;
   column-gap: 0;
   row-gap: 0;
-  /* ===== Tablet: 992px ===== */
 }
 .header .nav__logo {
   height: 100%;
@@ -1031,10 +1031,13 @@ button {
   flex-direction: row;
   column-gap: 0;
   row-gap: 0;
+  overflow: visible;
 }
 .header .nav__logo-icon {
   width: 93px;
-  height: 43px;
+  height: 36px;
+  display: block;
+  flex-shrink: 0;
 }
 @media (hover: hover) and (pointer: fine) {
   .header .nav__logo:hover {
@@ -1050,11 +1053,11 @@ button {
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  column-gap: min(65px, 5vw);
+  column-gap: min(50px, 4vw);
   row-gap: 0;
 }
 .header .nav__links .list__item-link {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #2B1B12;
   transition: color 0.22s;
@@ -1066,11 +1069,11 @@ button {
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    column-gap: min(40px, 5vw);
+    column-gap: min(30px, 4vw);
     row-gap: 0;
   }
   .header .nav__links .list__item-link {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .header .nav__user-controls {
@@ -1080,26 +1083,55 @@ button {
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  column-gap: min(30px, 5vw);
+  column-gap: min(24px, 4vw);
   row-gap: 0;
+  overflow: visible;
 }
 .header .nav__user-controls .search__link-icon,
 .header .nav__user-controls .account__link-icon {
-  width: 24px;
-  height: 24px;
-  transition: fill 0.22s, stroke 0.22s, width 0.3s ease, height 0.3s ease;
+  width: 22px;
+  height: 22px;
+  transition: fill 0.22s, stroke 0.22s;
+  display: inline-block;
+  flex-shrink: 0;
 }
 .header .nav__user-controls .btn__link {
-  margin-left: 15px;
-  width: 120px;
-  height: 50px;
+  margin-left: 12px;
+  width: 105px;
+  height: 44px;
   border: none;
   border-radius: 8px;
   background-color: #2B1B12;
   color: #FFF;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  transition: background-color 0.22s, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+  transition: background-color 0.22s;
+}
+@media (max-width: 992px) {
+  .header .nav__user-controls {
+    gap: min(16px, 3vw);
+  }
+  .header .nav__user-controls .search__link-icon,
+  .header .nav__user-controls .account__link-icon {
+    transform: scale(0.83);
+    transform-origin: center center;
+  }
+}
+@media (max-width: 992px) and (hover: hover) and (pointer: fine) {
+  .header .nav__user-controls .search__link-icon:hover,
+  .header .nav__user-controls .account__link-icon:hover {
+    cursor: pointer;
+    fill: #695346;
+    stroke: #695346;
+  }
+}
+@media (max-width: 992px) {
+  .header .nav__user-controls .btn__link {
+    width: 100px;
+    height: 42px;
+    font-size: 14px;
+    margin-left: 8px;
+  }
 }
 @media (max-width: 768px) {
   .header .nav__links {
@@ -2136,8 +2168,6 @@ button {
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  /* Ползунок */
-  /* Иконка солнца */
 }
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle:hover {
@@ -2147,6 +2177,9 @@ button {
 }
 .theme-toggle:focus-visible {
   box-shadow: 0 0 0 3px rgba(105, 83, 70, 0.25);
+}
+.theme-toggle {
+  /* Ползунок */
 }
 .theme-toggle::before {
   content: "";
@@ -2160,6 +2193,9 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transform: translateX(0);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.theme-toggle {
+  /* Иконка солнца */
 }
 .theme-toggle__sun {
   position: absolute;
