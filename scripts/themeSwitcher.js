@@ -1,9 +1,3 @@
-/**
- * Theme Switcher Module
- * Переключение светлой/тёмной темы с сохранением в localStorage
- * Синхронизация desktop и mobile тумблеров
- */
-
 const THEME_STORAGE_KEY = 'dream-home-theme-preference';
 
 class ThemeSwitcher {
@@ -13,13 +7,9 @@ class ThemeSwitcher {
     this.isInitialized = false;
   }
 
-  /**
-   * Инициализация модуля
-   */
   init() {
     if (this.isInitialized) return;
 
-    // Применяем сохранённую тему или системную
     const savedTheme = this.getSavedTheme();
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
@@ -35,7 +25,6 @@ class ThemeSwitcher {
       this.mobileToggle.addEventListener('click', () => this.toggle());
     }
 
-    // Слушаем изменения системной темы
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       if (!this.getSavedTheme()) {
         this.applyTheme(e.matches ? 'dark' : 'light', false);
@@ -46,7 +35,7 @@ class ThemeSwitcher {
   }
 
   /**
-   * Получение сохранённой темы
+   *
    * @returns {string|null} 'light' | 'dark' | null
    */
   getSavedTheme() {
@@ -58,37 +47,33 @@ class ThemeSwitcher {
   }
 
   /**
-   * Сохранение выбранной темы
+   *
    * @param {string} theme - 'light' | 'dark'
    */
   saveTheme(theme) {
     try {
       localStorage.setItem(THEME_STORAGE_KEY, theme);
     } catch {
-      // localStorage недоступен — ничего не делаем
     }
   }
 
   /**
-   * Применение темы к DOM
+   *
    * @param {string} theme - 'light' | 'dark'
-   * @param {boolean} animate - включать ли анимацию перехода
+   * @param {boolean} animate
    */
   applyTheme(theme, animate = true) {
     const html = document.documentElement;
     const isDark = theme === 'dark';
 
-    // Устанавливаем атрибут темы
     if (isDark) {
       html.setAttribute('data-theme', 'dark');
     } else {
       html.removeAttribute('data-theme');
     }
 
-    // Синхронизируем оба тумблера
     this.syncToggles(isDark);
 
-    // Анимация перехода (опционально)
     if (animate) {
       document.documentElement.style.transition = 'background-color 0.35s ease, color 0.35s ease';
       setTimeout(() => {
@@ -98,7 +83,7 @@ class ThemeSwitcher {
   }
 
   /**
-   * Синхронизация состояния обоих тумблеров
+   *
    * @param {boolean} isDark
    */
   syncToggles(isDark) {
@@ -113,7 +98,7 @@ class ThemeSwitcher {
   }
 
   /**
-   * Переключение темы
+   *
    */
   toggle() {
     const html = document.documentElement;
@@ -125,7 +110,6 @@ class ThemeSwitcher {
   }
 }
 
-// Создаём и экспортируем экземпляр
 const themeSwitcher = new ThemeSwitcher();
 
 export { themeSwitcher };
