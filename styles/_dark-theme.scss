@@ -148,6 +148,19 @@
     .reviews__controls-icon {
       fill: var(--btn-text) !important;
     }
+
+    .reviews__dot {
+      border-color: var(--text-muted) !important;
+    }
+
+    .reviews__dot.active {
+      background-color: var(--text-primary) !important;
+      border-color: var(--text-primary) !important;
+    }
+
+    .reviews__dot:hover:not(.active) {
+      background-color: var(--text-muted) !important;
+    }
   }
 
   .support-section {

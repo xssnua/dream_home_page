@@ -1,9 +1,4 @@
 @charset "UTF-8";
-/**
- * CSS Custom Properties для переключения тем
- * Светлая тема — значения по умолчанию (оригинальные цвета сайта)
- * Тёмная тема — переопределяется через [data-theme="dark"]
- */
 :root {
   --bg-primary: #FFF;
   --bg-secondary: #FEF7F2;
@@ -1708,6 +1703,7 @@ button {
   width: 100%;
   background-color: #FEF7F2;
   padding: 60px 15px;
+  overflow: hidden;
 }
 .reviews-section .reviews {
   text-align: center;
@@ -1721,15 +1717,21 @@ button {
   margin-bottom: 50px;
 }
 .reviews-section .reviews__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  flex-direction: row;
-  column-gap: 0;
-  row-gap: 0;
-  gap: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
   padding: 20px 0;
+}
+.reviews-section .reviews__track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reviews-section .reviews__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .reviews-section .reviews__controls {
   margin: 45px 0 0 0;
@@ -1775,6 +1777,32 @@ button {
   position: absolute;
   top: 30%;
   left: 40%;
+}
+.reviews-section .reviews__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+.reviews-section .reviews__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #695346;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.reviews-section .reviews__dot.active {
+  background-color: #2B1B12;
+  border-color: #2B1B12;
+  transform: scale(1.2);
+}
+@media (hover: hover) and (pointer: fine) {
+  .reviews-section .reviews__dot:hover:not(.active) {
+    background-color: #695346;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -2442,6 +2470,16 @@ button {
 }
 [data-theme=dark] .reviews-section .reviews__controls-icon {
   fill: var(--btn-text) !important;
+}
+[data-theme=dark] .reviews-section .reviews__dot {
+  border-color: var(--text-muted) !important;
+}
+[data-theme=dark] .reviews-section .reviews__dot.active {
+  background-color: var(--text-primary) !important;
+  border-color: var(--text-primary) !important;
+}
+[data-theme=dark] .reviews-section .reviews__dot:hover:not(.active) {
+  background-color: var(--text-muted) !important;
 }
 [data-theme=dark] .support-section {
   background-color: var(--bg-primary) !important;

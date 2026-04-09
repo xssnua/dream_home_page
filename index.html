@@ -391,9 +391,9 @@
                 <div class="reviews">
                     <h2 class="reviews__title">What People Say About Dwello</h2>
 
-                    <div class="reviews__wrapper">
-                        <div class="card-reviews">
-                            <img src="assets/cards/reviews_img1.webp" alt="Modern apartment interior"
+                    <div class="reviews__wrapper" id="reviewsWrapper">
+                        <div class="card-reviews reviews__slide" data-index="0">
+                            <img src="assets/cards/reviews_img1.jpg" alt="Modern apartment interior"
                                 class="card-reviews__img">
 
                             <div class="card-reviews__content">
@@ -426,8 +426,8 @@
                             </div>
                         </div>
 
-                        <div class="card-reviews">
-                            <img src="assets/cards/reviews_img2.webp" alt="Modern living room"
+                        <div class="card-reviews reviews__slide" data-index="1">
+                            <img src="assets/cards/reviews_img2.jpg" alt="Modern living room"
                                 class="card-reviews__img">
 
                             <div class="card-reviews__content">
@@ -460,8 +460,8 @@
                             </div>
                         </div>
 
-                        <div class="card-reviews">
-                            <img src="assets/cards/reviews_img3.webp" alt="Luxury bedroom" class="card-reviews__img">
+                        <div class="card-reviews reviews__slide" data-index="2">
+                            <img src="assets/cards/reviews_img3.jpg" alt="Luxury bedroom" class="card-reviews__img">
 
                             <div class="card-reviews__content">
                                 <div class="card-reviews__header">
@@ -494,16 +494,22 @@
                     </div>
 
                     <div class="reviews__controls">
-                        <button class="reviews__controls--prev">
+                        <button class="reviews__controls--prev" id="reviewsPrev" aria-label="Previous review">
                             <svg class="reviews__controls-icon reviews__controls-icon--prev">
                                 <use href="assets/sprites.svg#arrow-icon"></use>
                             </svg>
                         </button>
-                        <button class="reviews__controls--next">
+                        <button class="reviews__controls--next" id="reviewsNext" aria-label="Next review">
                             <svg class="reviews__controls-icon reviews__controls-icon--next">
                                 <use href="assets/sprites.svg#arrow-icon"></use>
                             </svg>
                         </button>
+                    </div>
+
+                    <div class="reviews__dots" id="reviewsDots">
+                        <button class="reviews__dot active" data-slide="0" aria-label="Review 1"></button>
+                        <button class="reviews__dot" data-slide="1" aria-label="Review 2"></button>
+                        <button class="reviews__dot" data-slide="2" aria-label="Review 3"></button>
                     </div>
                 </div>
             </div>
