@@ -211,7 +211,13 @@
     }
 
     .footer__nav-icon {
-      fill: var(--text-secondary) !important;
+      fill: var(--icon-fill) !important;
+    }
+
+    .--instagram-icon,
+    .--facebook-icon,
+    .--twitter-icon {
+      fill: var(--icon-fill) !important;
     }
   }
 
