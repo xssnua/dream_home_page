@@ -1139,6 +1139,14 @@ button {
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(43, 27, 18, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(43, 27, 18, 0);
+  }
+}
 .hero-section {
   background-color: #FEF7F2;
 }
@@ -1192,6 +1200,9 @@ button {
   font-size: 18px;
   color: #2B1B12;
   margin: 0 0 75px 0;
+}
+.hero-section .hero__action-btn {
+  animation: pulse 2.5s ease-in-out infinite;
 }
 .hero-section .hero__filters {
   position: relative;

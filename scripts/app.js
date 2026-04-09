@@ -7,6 +7,7 @@ import { showLoader, hideLoader } from './loader.js';
 import themeSwitcher from './themeSwitcher.js';
 import scrollAnimations from './scrollAnimations.js';
 import reviewsCarousel from './reviewsCarousel.js';
+import heroAnimations from './heroAnimations.js';
 
 showLoader();
 
@@ -15,6 +16,8 @@ themeSwitcher.init();
 scrollAnimations.init();
 
 reviewsCarousel.init();
+
+heroAnimations.init();
 
 window.addEventListener("load", () => {
   hideLoader();
