@@ -540,7 +540,7 @@ body.menu-open {
     cursor: pointer;
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+    background-color: #f4ebe6;
   }
 }
 
@@ -641,7 +641,7 @@ body.menu-open {
     cursor: pointer;
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    background-color: rgb(244.4006557377, 234.9790163934, 229.6793442623);
+    background-color: #f4ebe6;
   }
 }
 
@@ -2248,6 +2248,8 @@ button {
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  /* Ползунок */
+  /* Иконка солнца */
 }
 @media (hover: hover) and (pointer: fine) {
   .theme-toggle:hover {
@@ -2257,9 +2259,6 @@ button {
 }
 .theme-toggle:focus-visible {
   box-shadow: 0 0 0 3px rgba(105, 83, 70, 0.25);
-}
-.theme-toggle {
-  /* Ползунок */
 }
 .theme-toggle::before {
   content: "";
@@ -2273,9 +2272,6 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transform: translateX(0);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.theme-toggle {
-  /* Иконка солнца */
 }
 .theme-toggle__sun {
   position: absolute;
@@ -2849,13 +2845,7 @@ button {
   display: none;
   padding: 10px 16px;
   gap: 4px;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  column-gap: 0;
-  row-gap: 0;
 }
 .chatbot__typing.active {
   display: flex;

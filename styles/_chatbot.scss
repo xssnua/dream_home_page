@@ -129,7 +129,7 @@
     display: none;
     padding: 10px 16px;
     gap: 4px;
-    @include m.d-flex(flex-start, center);
+    align-items: center;
 
     &.active {
       display: flex;

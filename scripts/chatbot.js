@@ -38,9 +38,6 @@ class ChatBot {
     // Clear history
     this.clearBtn.addEventListener('click', () => this.clear());
 
-    // Make sure typing is hidden on init
-    this.hideTyping();
-
     // Load saved messages
     this.loadHistory();
   }
