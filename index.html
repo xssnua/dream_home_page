@@ -692,6 +692,39 @@
         <img src="./assets/img/arrow-up.png" alt="">
     </button>
 
+    <!-- Chat Bot -->
+    <div id="chatbot" class="chatbot" aria-label="Chat support">
+        <button class="chatbot__toggle" id="chatbotToggle" aria-label="Open chat" aria-expanded="false">
+            <svg class="chatbot__toggle-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+        </button>
+
+        <div class="chatbot__window" id="chatbotWindow" role="dialog" aria-label="Chat window">
+            <div class="chatbot__header">
+                <h3 class="chatbot__header-title">Dream Home Support</h3>
+                <button class="chatbot__close" id="chatbotClose" aria-label="Close chat">×</button>
+            </div>
+
+            <div class="chatbot__messages" id="chatbotMessages">
+                <div class="chatbot__message bot">
+                    <p>👋 Hi there! How can I help you today?</p>
+                </div>
+            </div>
+
+            <div class="chatbot__typing" id="chatbotTyping">
+                <span></span><span></span><span></span>
+            </div>
+
+            <div class="chatbot__input-area">
+                <textarea class="chatbot__input" id="chatbotInput" placeholder="Type a message..." rows="1"></textarea>
+                <button class="chatbot__send" id="chatbotSend" aria-label="Send message">➤</button>
+            </div>
+
+            <button class="chatbot__clear" id="chatbotClear" aria-label="Clear chat history">🗑 Clear history</button>
+        </div>
+    </div>
+
     <script type="module" src="./scripts/app.js"></script>
 </body>
 

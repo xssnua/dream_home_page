@@ -8,6 +8,7 @@ import themeSwitcher from './themeSwitcher.js';
 import scrollAnimations from './scrollAnimations.js';
 import reviewsCarousel from './reviewsCarousel.js';
 import heroAnimations from './heroAnimations.js';
+import chatbot from './chatbot.js';
 
 showLoader();
 
@@ -18,6 +19,8 @@ scrollAnimations.init();
 reviewsCarousel.init();
 
 heroAnimations.init();
+
+chatbot.init();
 
 window.addEventListener("load", () => {
   hideLoader();
